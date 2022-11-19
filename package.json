@@ -15,9 +15,6 @@
     "coverage": "vitest run --coverage",
     "e2e": "playwright test"
   },
-  "prisma": {
-    "seed": "node --require esbuild-register prisma/seed.ts"
-  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "prettier --write --ignore-unknown",
