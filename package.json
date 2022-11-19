@@ -1,0 +1,65 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "run-s \"build:*\"",
+    "build:css": "npm run generate:css -- --minify",
+    "build:remix": "remix build",
+    "dev": "run-p \"dev:*\"",
+    "dev:css": "npm run generate:css -- --watch",
+    "dev:remix": "remix dev",
+    "generate:css": "npx tailwindcss -o ./app/tailwind.css",
+    "prepare": "husky install",
+    "start": "remix-serve build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "e2e": "playwright test"
+  },
+  "prisma": {
+    "seed": "node --require esbuild-register prisma/seed.ts"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write --ignore-unknown",
+      "eslint --cache --fix",
+      "vitest run"
+    ]
+  },
+  "dependencies": {
+    "@remix-run/node": "1.7.6",
+    "@remix-run/react": "1.7.6",
+    "@remix-run/serve": "1.7.6",
+    "isbot": "3.6.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.2.0",
+    "@commitlint/config-conventional": "17.2.0",
+    "@playwright/test": "1.28.0",
+    "@remix-run/dev": "1.7.6",
+    "@remix-run/eslint-config": "1.7.6",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@vitejs/plugin-react": "2.2.0",
+    "autoprefixer": "10.4.13",
+    "esbuild-register": "3.4.1",
+    "eslint": "8.27.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "8.0.2",
+    "jsdom": "20.0.2",
+    "lint-staged": "13.0.3",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.4.19",
+    "prettier": "2.7.1",
+    "remix-flat-routes": "0.4.8",
+    "tailwindcss": "3.2.4",
+    "typescript": "4.9.3",
+    "vite": "3.2.4",
+    "vitest": "0.25.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

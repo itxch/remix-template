@@ -1,0 +1,13 @@
+node_modules
+
+/.cache
+.eslintcache
+/build
+/public/build
+.env
+
+app/tailwind.css
+
+e2e/test-results/
+e2e/playwright-report/
+/playwright/.cache/
