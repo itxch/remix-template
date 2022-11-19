@@ -2,6 +2,16 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+## What this template includes
+
+- Tests using ViteTest
+- E2E tests using playwright
+- GitHub Workflow to run E2E on push
+- Tailwind setup using PostCSS
+- Prettier and ESLint setup
+- Semantic-release for automated versioning and changelog generation
+- Git hooks that run ViteTest, as well as linting, and commit linting
+
 ## Development
 
 From your terminal:

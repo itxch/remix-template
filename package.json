@@ -1,4 +1,5 @@
 {
+  "name": "template",
   "private": true,
   "sideEffects": false,
   "scripts": {
@@ -13,13 +14,24 @@
     "start": "remix-serve build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "semantic-release": "semantic-release"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "prettier --write --ignore-unknown",
       "eslint --cache --fix",
       "vitest run"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
     ]
   },
   "dependencies": {
@@ -36,6 +48,9 @@
     "@playwright/test": "1.28.0",
     "@remix-run/dev": "1.7.6",
     "@remix-run/eslint-config": "1.7.6",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/github": "^8.0.6",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "@vitejs/plugin-react": "2.2.0",
@@ -51,6 +66,7 @@
     "postcss": "8.4.19",
     "prettier": "2.7.1",
     "remix-flat-routes": "0.4.8",
+    "semantic-release": "^19.0.5",
     "tailwindcss": "3.2.4",
     "typescript": "4.9.3",
     "vite": "3.2.4",
@@ -58,5 +74,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itxch/remix-template.git"
   }
 }
